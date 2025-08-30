@@ -1,0 +1,354 @@
+/* MENÚ NAVBAR FIJO Y TRANSPARENTE */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Esto asegura que se pegue completamente al borde izquierdo */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Espaciado interno */
+  margin: 0; /* Elimina márgenes exteriores si hay */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  backdrop-filter: blur(6px); /* Efecto de desenfoque */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+
+/* LOGO Y NOMBRE DE LA MARCA */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 45px;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* LINKS DEL MENÚ */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f8b3d0;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.95);
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 160px;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8b3d0;
+  color: #000;
+}
+
+/* ICONO HAMBURGUESA PARA MÓVILES */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8fb;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+.titulo {
+   padding-top: 90px !important;
+  text-align: center;
+  color: #d94f9f;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.acordeon-btn {
+  background-color: #ffd1ec;
+  color: #b3005c;
+  cursor: pointer;
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.acordeon-btn:hover {
+  background-color: #ffb3e6;
+}
+
+.icono {
+  width: 40px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.panel {
+  padding: 0 15px;
+  display: none;
+  overflow: hidden;
+  background-color: #fff0f8;
+  border-left: 3px solid #d94f9f;
+  margin-bottom: 15px;
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  gap: 15px;
+}
+
+.producto img {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.producto h3 {
+  margin: 0;
+  color: #c71585;
+}
+
+.producto p {
+  margin: 3px 0;
+  font-size: 14px;
+  
+}
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-luxe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #111;
+  color: white;
+  padding: 50px 30px;
+  border-top: 1px solid #333;
+}
+
+.footer-luxe .col {
+  flex: 1;
+  min-width: 250px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* SALON NEWS */
+.footer-luxe h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.footer-luxe ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-luxe ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* PORTFOLIO */
+.footer-luxe .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-luxe .gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.photo-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.photo-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* CONTACTO */
+.footer-luxe .contacto p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ff66b2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-luxe {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-luxe .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-luxe .col {
+    margin-bottom: 30px;
+  }
+
+  .photo-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: brightness(1.1);
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.5);
+}

@@ -1,0 +1,410 @@
+/* MENÚ NAVBAR FIJO Y TRANSPARENTE */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Esto asegura que se pegue completamente al borde izquierdo */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* Espaciado interno */
+  margin: 0; /* Elimina márgenes exteriores si hay */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  backdrop-filter: blur(6px); /* Efecto de desenfoque */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+
+/* LOGO Y NOMBRE DE LA MARCA */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 45px;
+  margin-right: 5px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* LINKS DEL MENÚ */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f8b3d0;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.95);
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 160px;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8b3d0;
+  color: #000;
+}
+
+/* ICONO HAMBURGUESA PARA MÓVILES */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu li a {
+    padding: 10px;
+  }
+}
+
+  body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #fff0f5;
+  color: #333;
+}
+
+.titulo {
+   padding-top: 90px !important;
+  text-align: center;
+  font-size: 36px;
+  color: #e75480;
+  margin-bottom: 40px;
+}
+
+.tarjetas-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+.tarjeta {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tarjeta h2 {
+  margin: 15px 0 5px;
+  font-size: 20px;
+  color: #c2185b;
+}
+
+.tipo {
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.precio {
+  font-size: 16px;
+  color: #4caf50;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.btn-wsp {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-wsp i {
+  margin-right: 8px;
+}
+
+.btn-wsp:hover {
+  background-color: #1ebe57;
+}
+
+/* 🟣 RESPONSIVE */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+
+  .tarjetas-contenedor {
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .tarjeta {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .tarjeta h2 {
+    font-size: 18px;
+  }
+
+  .descripcion, .precio, .tipo {
+    font-size: 13px;
+  }
+
+  .btn-wsp {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+.btn-regresar {
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 20px;
+  background-color: #f8bbd0;
+  color: #880e4f;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #f48fb1;
+  transition: all 0.3s ease;
+  font-size: 16px;
+   text-align: center;
+}
+
+.btn-regresar i {
+  margin-right: 8px;
+   text-align: center;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.contacto-luxe {
+  background-color: #111;
+  color: white;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.contacto-luxe .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.contacto-luxe .columna {
+  flex: 1 1 300px;
+  min-width: 260px;
+}
+
+.contacto-luxe h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contacto-luxe ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contacto-luxe li {
+  margin: 10px 0;
+}
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ff66b2;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.btn-galeria {
+  background-color: #111;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.info-contacto li {
+  margin: 10px 0;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.redes img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+/* 🔻 RESPONSIVE DESIGN 🔻 */
+@media (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacto-luxe .contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacto-luxe .columna {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .btn-galeria {
+    width: 100%;
+  }
+
+  .redes {
+    flex-wrap: wrap;
+  }
+}
